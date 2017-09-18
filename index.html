@@ -1,0 +1,29 @@
+<!doctype>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="static/css/w3-theme-teal.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body {font-family: "Roboto", sans-serif}
+  .w3-bar-block .w3-bar-item {padding:16px;font-weight:bold}
+  </style>
+</head>
+<body>
+  <!-- To be used in conjunction with W3CSS.elm -->
+  <div id="elm-area"><div>
+    <script src="elm.js"></script>
+    <script>
+      var app = Elm.W3CSS.embed(document.getElementById("elm-area"));
+      window.onscroll = function() {
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+          app.ports.onScroll.send("scrollUp");
+        } else {
+          app.ports.onScroll.send("scrollDown")
+        }
+      };
+    </script>
+  </body>
+</html>
